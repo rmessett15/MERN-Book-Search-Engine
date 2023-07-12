@@ -3,6 +3,7 @@ import { Form, Button, Alert } from 'react-bootstrap';
 
 import { createUser } from '../utils/API';
 import Auth from '../utils/auth';
+import { useMutation } from '@apollo/client';
 
 const SignupForm = () => {
   // set initial form state
@@ -33,6 +34,9 @@ const SignupForm = () => {
       if (!response.ok) {
         throw new Error('something went wrong!');
       }
+
+// Use Use mutation hook to pass in variables from mutations.js (import function from apollo hook and mutations/queries.js)
+
 
       const { token, user } = await response.json();
       console.log(user);
