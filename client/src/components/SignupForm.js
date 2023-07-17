@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
 import { Form, Button, Alert } from 'react-bootstrap';
 
-import { createUser } from '../utils/API';
+// import { createUser } from '../utils/API';
 import Auth from '../utils/auth';
 import { useMutation } from '@apollo/client';
+import { ADD_USER } from '../utils/mutations';
 
 const SignupForm = () => {
+  const [addUser] = useMutation(ADD_USER);
   // set initial form state
   const [userFormData, setUserFormData] = useState({ username: '', email: '', password: '' });
   // set state for form validation
@@ -29,16 +31,23 @@ const SignupForm = () => {
     }
 
     try {
-      const response = await createUser(userFormData);
+      // const response = await createUser(userFormData);
+      const response = await addUser({
+        variables: {
+          username: userFormData.username,
+          email: userFormData.email,
+          password: userFormData.password
+        }
+      })
 
-      if (!response.ok) {
+      if (!response) {
         throw new Error('something went wrong!');
       }
 
 // Use Use mutation hook to pass in variables from mutations.js (import function from apollo hook and mutations/queries.js)
 
 
-      const { token, user } = await response.json();
+      const { token, user } = response.data.addUser;
       console.log(user);
       Auth.login(token);
     } catch (err) {

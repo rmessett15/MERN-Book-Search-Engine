@@ -13,12 +13,12 @@ const typeDefs = gql`
   }
 
   input BookInput {
-    authors: [String!]
-    description: String!
+    authors: [String]
+    description: String
     title: String!
     bookId: String!
-    image: String!
-    link: String!
+    image: String
+    link: String
   }
 
   type User {
@@ -31,11 +31,11 @@ const typeDefs = gql`
 
   type Book {
     bookId: ID!
-    authors: [String!]
-    description: String!
+    authors: [String]
+    description: String
     title: String!
-    image: String!
-    link: String!
+    image: String
+    link: String
   }
 
   type Auth {
