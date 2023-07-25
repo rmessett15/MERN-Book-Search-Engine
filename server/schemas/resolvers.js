@@ -6,7 +6,7 @@ const resolvers = {
     me: async (parent, args, context) => {
       console.log(context.user)
       if (context.user) {
-        return User.find({ _id: context.user._id });
+        return User.findOne({ _id: context.user._id });
       }
       throw new Error("user not found");
     },
@@ -56,7 +56,9 @@ const resolvers = {
           },
           {
             $pull: {
-              savedBooks: args.bookId,
+              savedBooks: {
+                bookId: args.bookId
+              }
             },
           },
           { new: true }
