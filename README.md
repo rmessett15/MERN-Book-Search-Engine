@@ -40,6 +40,14 @@ Week-21 Challenge (MERN)
 
 ## Screenshots
 
+![Screenshot1-week-21-challenge](https://github.com/rmessett15/MERN-Book-Search-Engine/assets/120127903/00ad1f9a-1ae8-4d62-b649-6fd86410b1e8)
+
+![Screenshot2-week-21-challenge](https://github.com/rmessett15/MERN-Book-Search-Engine/assets/120127903/75a25cc3-0bb7-4d61-bd56-31d2ed750867)
+
+![Screenshot3-week-21-challenge](https://github.com/rmessett15/MERN-Book-Search-Engine/assets/120127903/6c50160d-5c34-43b9-8bfb-81f793110ee1)
+
+![Screenshot4-week-21-challenge](https://github.com/rmessett15/MERN-Book-Search-Engine/assets/120127903/efaec2a0-3c82-416b-964f-14735fca39b3)
+
 ## Technologies Used
 
 This application is powered by React.js (v16.13.1). CSS was utilized to create the overall styling of the user interface.
